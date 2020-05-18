@@ -17,8 +17,8 @@ iType will be powered by Javascript, HTML5, and CSS.
 
 # Implementation Timeline 
 
-Day 1: Map out skelenton of the code, research any documentation on how to implement sound, pick out color scheme/theme. What do I want this game to look like?
+Day 1: Map out skelenton of the code, research any documentation on how to implement sound, pick out color scheme/theme.
 
-Day 2: Begin the gameplay functionality and logic, as well as any light styling to get a better visual of the gamee.
+Day 2: Begin the gameplay functionality and logic, as well as any light styling to get a better visual of the game.
 
 Day 3: Research different API's to fetch words or quotes and implement them into the code. Finalize visuals, stylings, and sounds.
