@@ -94,3 +94,40 @@ time, mark, audio, video {
     font-family: 'Permanent Marker', cursive;
     font-size: 35px;
 }
+
+.time-score-container {
+  display: flex;
+  width: 300px;
+}
+
+/* h1,
+h2 {
+  width: 100%;
+} */
+
+/* h1 {
+  animation: right_to_left 1s ease;
+}
+
+h2 {
+  text-align: right;
+  animation: left_to_right 1s ease;
+}
+
+@keyframes right_to_left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes left_to_right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0;
+  }
+} */
