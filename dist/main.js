@@ -24,33 +24,39 @@ const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 
-const words = [
-    'hat',
-    'river',
-    'lucky',
-    'statue',
-    'generate',
-    'stubborn',
-    'cocktail',
-    'runaway',
-    'joke',
-    'developer',
-    'establishment',
-    'hero',
-    'javascript',
-    'nutrition',
-    'revolver',
-    'echo',
-    'siblings',
-    'investigate',
-    'horrendous',
-    'symptom',
-    'laughter',
-    'magic',
-    'master',
-    'space',
-    'definition'
-];
+// fetch words from API
+let words = [];
+words = fetch('https://random-word-api.herokuapp.com/word?number=50')
+.then(response => response.json())
+.then(data => console.log(data))
+
+// const words = [
+//     'hat',
+//     'river',
+//     'lucky',
+//     'statue',
+//     'generate',
+//     'stubborn',
+//     'cocktail',
+//     'runaway',
+//     'joke',
+//     'developer',
+//     'establishment',
+//     'hero',
+//     'javascript',
+//     'nutrition',
+//     'revolver',
+//     'echo',
+//     'siblings',
+//     'investigate',
+//     'horrendous',
+//     'symptom',
+//     'laughter',
+//     'magic',
+//     'master',
+//     'space',
+//     'definition'
+// ];
 
 // Initialize Game
 function init() {
@@ -120,7 +126,7 @@ function countdown() {
 // Check game status
 function checkStatus() {
     if (!isPlaying && time === 0) {
-        message.innerHTML = 'Game Over!!!';
+        message.innerHTML = 'Gotta be quicker than that!';
         score = -1;
     }
 }

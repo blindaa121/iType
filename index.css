@@ -69,7 +69,8 @@ time, mark, audio, video {
 }
 
 #seconds {
-    color: #8d99ae;
+    color: #4f5d75;
+    font-family: 'lobster'
 }
 
 .select-difficulty {
@@ -83,7 +84,7 @@ time, mark, audio, video {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
     font-family: 'Lobster', cursive;
     font-size: 50px;
 }
@@ -97,15 +98,19 @@ time, mark, audio, video {
 
 .time-score-container {
   display: flex;
-  width: 300px;
+  justify-content: space-between;
+  width: 560px; 
+  margin-top: 45px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
 }
 
 /* h1,
 h2 {
   width: 100%;
-} */
+} */ */
 
-/* h1 {
+h1 {
   animation: right_to_left 1s ease;
 }
 
@@ -130,4 +135,4 @@ h2 {
   to {
     margin-left: 0;
   }
-} */
+}
