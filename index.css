@@ -30,6 +30,12 @@ time, mark, audio, video {
     margin: 0px;
 }
 
+.game-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -68,9 +74,18 @@ time, mark, audio, video {
 
 .select-difficulty {
     display: flex;
-    margin-top: 50px;
+    margin-top: 20px;
     justify-content: space-between;
     width: 750px;
+}
+
+.difficulty-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
 }
 
 .level-btn {

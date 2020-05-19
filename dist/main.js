@@ -1,13 +1,3 @@
-// Game logic will go here 
-
-//DOM elements will go here 
-
-//List an array of words 
-
-//Game level difficulty will go here 
-
-//
-
 window.addEventListener('load', init);
 
 // Globals
@@ -20,7 +10,7 @@ const levels = {
 };
 
 // To change level
-const currentLevel = levels.easy;
+const currentLevel = levels.medium;
 
 let time = currentLevel;
 let score = 0;
