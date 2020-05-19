@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap" rel="stylesheet"> 
     <title>iType</title>
 </head>
@@ -19,7 +18,7 @@
             <div class="game-display">
                 <p class="lead">Type The Given Word Within
                     <span class="text-success" id="seconds">5</span> Seconds:</p>
-                <h2 id="current-word">hello</h2>
+                <h2 id="current-word"></h2>
                 <input type="text" class="form-control form-control-lg" placeholder='Begin typing!' id="word-input"
                     autofocus>
                 <h4 id="message"></h4>
@@ -42,9 +41,10 @@
                 <div class='difficulty-section'>
                     <h1>Choose your level:</h1>
                     <div class='select-difficulty'>
-                        <button class='level-btn'>Warmup</button>
-                        <button class='level-btn'>Warmed-Up</button>
-                        <button class='level-btn'>HOT TAMALE</button>    
+                        <button onclick="playBtnSound(); changeLevel(easy)" class='level-btn'>Warmup</button>
+                        <!-- <a href="#" onmousedown="click.play()">click</a> -->
+                        <button onclick="playBtnSound(); changeLevel(medium)" class='level-btn'>Warmed-Up</button>
+                        <button onclick="playBtnSound(); changeLevel(hard)" class='level-btn'>HOT TAMALE</button>    
                     </div>
                     
                 </div>

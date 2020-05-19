@@ -10,7 +10,11 @@ const levels = {
 };
 
 // To change level
-const currentLevel = levels.medium;
+const currentLevel = levels.easy;
+
+function changeLevel(level) {
+    currentLevel = levels.level
+}
 
 let time = currentLevel;
 let score = 0;
@@ -25,52 +29,51 @@ const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 
 // fetch words from API
-let words = [];
-words = fetch('https://random-word-api.herokuapp.com/word?number=50')
-.then(response => response.json())
-.then(data => console.log(data))
+// let words = [];
+// let words = [];
 
-// const words = [
-//     'hat',
-//     'river',
-//     'lucky',
-//     'statue',
-//     'generate',
-//     'stubborn',
-//     'cocktail',
-//     'runaway',
-//     'joke',
-//     'developer',
-//     'establishment',
-//     'hero',
-//     'javascript',
-//     'nutrition',
-//     'revolver',
-//     'echo',
-//     'siblings',
-//     'investigate',
-//     'horrendous',
-//     'symptom',
-//     'laughter',
-//     'magic',
-//     'master',
-//     'space',
-//     'definition'
-// ];
+words = fetch('https://random-word-api.herokuapp.com/word?number=25')
+.then(response => response.json())
+.then(data => data.forEach(word => currentWord.innerHTML = word))
 
 // Initialize Game
 function init() {
     // Show number of seconds in UI
     seconds.innerHTML = currentLevel;
     // Load word from array
+    words = fetch('https://random-word-api.herokuapp.com/word?number=25')
+        .then(response => response.json())
+        .then(data => words = data)
+
     showWord(words);
     // Start matching on word input
     wordInput.addEventListener('input', startMatch);
     // Call countdown every second
     setInterval(countdown, 1000);
     // Check game status
-    setInterval(checkStatus, 50);
+    setInterval(gameOver, 50);
 }
+
+// Game sounds 
+var click = new Audio();
+click.src = "sounds/buttonpress.mp3";
+function playBtnSound() {
+    click.play();
+};
+
+var levelUp = new Audio();
+levelUp.src = "sounds/levelup.mp3"
+
+function playLevelUp() {
+    levelUp.play();
+};
+
+var gameOverSound = new Audio();
+gameOverSound.src = "sounds/lose.mp3"
+
+function playgameOver() {
+    gameOverSound.play();
+};
 
 // Start match
 function startMatch() {
@@ -82,18 +85,14 @@ function startMatch() {
         score++;
     }
 
-    // If score is -1, display 0
-    if (score === -1) {
-        scoreDisplay.innerHTML = 0;
-    } else {
-        scoreDisplay.innerHTML = score;
-    }
+    score === -1 ? scoreDisplay.innerHTML = 0 : scoreDisplay.innerHTML = score;
 }
 
 // Match currentWord to wordInput
 function matchWords() {
     if (wordInput.value === currentWord.innerHTML) {
-        message.innerHTML = 'Correct!!!';
+        message.innerHTML = 'NOICE!';
+        playLevelUp();
         return true;
     } else {
         message.innerHTML = '';
@@ -124,9 +123,11 @@ function countdown() {
 }
 
 // Check game status
-function checkStatus() {
+function gameOver() {
     if (!isPlaying && time === 0) {
         message.innerHTML = 'Gotta be quicker than that!';
         score = -1;
+        // playgameOver();
+        // continue;
     }
 }
