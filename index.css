@@ -19,6 +19,35 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 50px;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  padding-right: 120px;
+}
+
+.time > h3 {
+  text-decoration: underline;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 50px;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  padding-left: 120px;
+}
+
+.score > h3 {
+  text-decoration: underline;
+}
+
 .header {
     font-family: 'Lobster', cursive;
     text-align: center;
@@ -38,12 +67,12 @@ time, mark, audio, video {
 
 .container {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     /* border: 3px solid #087E8B; */
     background-color: #ef8354;
-    height: 600px;
+    height: 650px;
 }
 
 .row {
@@ -58,15 +87,21 @@ time, mark, audio, video {
     font-size: 30px;
 }
 
-.intructions-outer {
-    border: 3px solid white;
+.instructions-outer {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 30px;
+  align-items: center;
+  background-color: #2F4858;
+  color: white;
+  height: 75px;
 }
 
 #current-word {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 75px;
-    
 }
 
 #seconds {
@@ -90,15 +125,20 @@ time, mark, audio, video {
 .select-difficulty {
     display: flex;
     margin-top: 20px;
+    padding-top: 20px;
     justify-content: space-between;
     width: 750px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .difficulty-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    padding-top: 50px;
     font-family: 'Lobster', cursive;
     font-size: 50px;
 }
@@ -171,4 +211,43 @@ h2 {
 .level-btn:active {
 	position:relative;
 	top:1px;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

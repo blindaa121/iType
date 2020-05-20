@@ -25,6 +25,13 @@ const timeDisplay = document.getElementById('time');
 const message = document.getElementById('message');
 const seconds = document.getElementById('seconds');
 
+var keystroke = new Audio();
+keystroke.src = "sounds/tick.mp3"
+
+wordInput.addEventListener("keydown", () => {
+    keystroke.play()
+});
+
 // fetch words from API
 // let words = [];
 // let words = [];
@@ -35,30 +42,23 @@ fetch('https://random-word-api.herokuapp.com/word?number=100')
 
 // Initialize Game
 function init() {
-    // Show number of seconds in UI
     seconds.innerHTML = currentLevel;
-    // Load word from array
     words = fetch('https://random-word-api.herokuapp.com/word?number=100')
     .then(response => response.json())
-    .then(data => words = data)
-    
+    .then(data => words = data) 
     showWord(words);
-    // Start matching on word input
     wordInput.addEventListener('input', startMatch);
-    // Call countdown every second
     setInterval(countdown, 1000);
-    // Check game status
     setInterval(gameOver, 50);
-    // changeLevel();
 }
 
 function changeLevel(level) {
-    // debugger
     currentLevel = level;
 }
 // Game sounds 
 var click = new Audio();
 click.src = "sounds/buttonpress.mp3";
+
 function playBtnSound() {
     click.play();
 };
@@ -93,7 +93,6 @@ function startMatch() {
 // Match currentWord to wordInput
 function matchWords() {
     if (wordInput.value === currentWord.innerHTML) {
-        // message.innerHTML = 'NOICE!';
         playLevelUp();
         return true;
     } else {
@@ -104,24 +103,39 @@ function matchWords() {
 
 // Pick & show random word
 function showWord(words) {
-    // Generate random array index
     const randIndex = Math.floor(Math.random() * words.length);
-    // Output random word
     currentWord.innerHTML = words[randIndex];
 }
 
 // Countdown timer
 function countdown() {
-    // Make sure time is not run out
     if (time > 0) {
-        // Decrement
         time--;
     } else if (time === 0) {
-        // Game is over
         isPlaying = false;
     }
-    // Show time
     timeDisplay.innerHTML = time;
+}
+
+function showDialog () {
+    document.getElementById("myDialog").showModal();
+}
+
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+
+function displayModal() {
+    modal.style.display = "block";
+}
+
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
 // Check game status
@@ -129,7 +143,6 @@ function gameOver() {
     if (!isPlaying && time === 0) {
         message.innerHTML = 'Gotta be quicker than that!';
         score = -1;
-        // playgameOver();
-        // continue;
+        // displayModal();
     }
 }
