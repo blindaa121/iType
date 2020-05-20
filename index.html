@@ -13,17 +13,14 @@
     </header>
     <div class="container">
     
-        <!-- Word & Input -->
         <div class="row">
             <div class="game-display">
                 <p class="lead">Type The Given Word Within
                     <span class="text-success" id="seconds">5</span> Seconds:</p>
                 <h2 id="current-word"></h2>
-                <input type="text" class="form-control form-control-lg" placeholder='Begin typing!' id="word-input"
-                    autofocus>
+                <input type="text" placeholder='Begin typing!' id="word-input"/>
                 <h4 id="message"></h4>
     
-                <!-- Time & Score Columns -->
                 <div class="time-score-container">
                     <div class="time">
                         <h3>Time Left:
@@ -37,28 +34,23 @@
                     </div>
                 </div>
     
-                <!-- Instructions -->
                 <div class='difficulty-section'>
                     <h1>Choose your level:</h1>
                     <div class='select-difficulty'>
-                        <button onclick="playBtnSound(); changeLevel(easy)" class='level-btn'>Warmup</button>
-                        <!-- <a href="#" onmousedown="click.play()">click</a> -->
-                        <button onclick="playBtnSound(); changeLevel(medium)" class='level-btn'>Warmed-Up</button>
-                        <button onclick="playBtnSound(); changeLevel(hard)" class='level-btn'>HOT TAMALE</button>    
+                        <button class='level-btn' onclick="playBtnSound(); changeLevel(5); startMatch();" class="level-btn">Warmup</button>
+                        <button class='level-btn' onclick="playBtnSound(); changeLevel(3); startMatch();" class='level-btn'>Warmed-Up</button>
+                        <button class='level-btn' onclick="playBtnSound(); changeLevel(1); startMatch()" class='level-btn'>Wordsmith</button>    
                     </div>
                     
                 </div>
 
                 <div class="instructions-outer">
-                        <div class="card card-body bg-secondary text-white">
-                            <h5>Instructions</h5>
-                            <p>Type each word in the given amount of seconds to score. To play again, just type the current
-                                word. Your score
-                                will reset</p>
-                        </div>
+                    <h5>Instructions</h5>
+                    <p>Type each word in the given amount of seconds to score. To play again, just type the current
+                        word. Your score
+                        will reset</p>
                 </div>
 
-                
             </div>
         </div>
     </div>

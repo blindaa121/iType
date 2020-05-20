@@ -66,12 +66,26 @@ time, mark, audio, video {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 75px;
+    
 }
 
 #seconds {
     color: #4f5d75;
     font-family: 'lobster'
 }
+
+#word-input {
+  font-size: 75px;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  border: none;
+  background-color: #ef8354;
+}
+
+#word-input:focus {
+  outline: none;
+}
+
 
 .select-difficulty {
     display: flex;
@@ -105,10 +119,6 @@ time, mark, audio, video {
   font-size: 30px;
 }
 
-/* h1,
-h2 {
-  width: 100%;
-} */ */
 
 h1 {
   animation: right_to_left 1s ease;
@@ -118,6 +128,7 @@ h2 {
   text-align: right;
   animation: left_to_right 1s ease;
 }
+
 
 @keyframes right_to_left {
   from {
@@ -135,4 +146,29 @@ h2 {
   to {
     margin-left: 0;
   }
+}
+
+.level-btn {
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'lobster';
+	font-size: 30px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.level-btn:hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.level-btn:active {
+	position:relative;
+	top:1px;
 }

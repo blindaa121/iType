@@ -10,29 +10,26 @@ const levels = {
 };
 
 // To change level
-const currentLevel = levels.easy;
 
-function changeLevel(level) {
-    currentLevel = levels.level
-}
 
+let currentLevel = levels.easy;
 let time = currentLevel;
 let score = 0;
 let isPlaying;
 
 // DOM Elements
-const wordInput = document.querySelector('#word-input');
-const currentWord = document.querySelector('#current-word');
-const scoreDisplay = document.querySelector('#score');
-const timeDisplay = document.querySelector('#time');
-const message = document.querySelector('#message');
-const seconds = document.querySelector('#seconds');
+const wordInput = document.getElementById('word-input');
+const currentWord = document.getElementById('current-word');
+const scoreDisplay = document.getElementById('score');
+const timeDisplay = document.getElementById('time');
+const message = document.getElementById('message');
+const seconds = document.getElementById('seconds');
 
 // fetch words from API
 // let words = [];
 // let words = [];
 
-words = fetch('https://random-word-api.herokuapp.com/word?number=25')
+fetch('https://random-word-api.herokuapp.com/word?number=100')
 .then(response => response.json())
 .then(data => data.forEach(word => currentWord.innerHTML = word))
 
@@ -41,10 +38,10 @@ function init() {
     // Show number of seconds in UI
     seconds.innerHTML = currentLevel;
     // Load word from array
-    words = fetch('https://random-word-api.herokuapp.com/word?number=25')
-        .then(response => response.json())
-        .then(data => words = data)
-
+    words = fetch('https://random-word-api.herokuapp.com/word?number=100')
+    .then(response => response.json())
+    .then(data => words = data)
+    
     showWord(words);
     // Start matching on word input
     wordInput.addEventListener('input', startMatch);
@@ -52,8 +49,13 @@ function init() {
     setInterval(countdown, 1000);
     // Check game status
     setInterval(gameOver, 50);
+    // changeLevel();
 }
 
+function changeLevel(level) {
+    // debugger
+    currentLevel = level;
+}
 // Game sounds 
 var click = new Audio();
 click.src = "sounds/buttonpress.mp3";
@@ -84,14 +86,14 @@ function startMatch() {
         wordInput.value = '';
         score++;
     }
-
+    seconds.innerHTML = currentLevel;
     score === -1 ? scoreDisplay.innerHTML = 0 : scoreDisplay.innerHTML = score;
 }
 
 // Match currentWord to wordInput
 function matchWords() {
     if (wordInput.value === currentWord.innerHTML) {
-        message.innerHTML = 'NOICE!';
+        // message.innerHTML = 'NOICE!';
         playLevelUp();
         return true;
     } else {
