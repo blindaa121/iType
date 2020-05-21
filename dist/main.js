@@ -29,9 +29,9 @@ const seconds = document.getElementById('seconds');
 // keystroke.src = "sounds/tick.mp3"
 
 wordInput.addEventListener("keydown", () => {
-    var keystroke = new Audio("sounds/tick.mp3");
+    var keystroke = new Audio("sounds/keystroke1.mp3");
     keystroke.play();
-    // return false;
+    return false;
 });
 
 // fetch words from API
@@ -48,7 +48,8 @@ function init() {
     words = fetch('https://random-word-api.herokuapp.com/word?number=100')
     .then(response => response.json())
     .then(data => words = data) 
-    showWord(words);
+    // showWord(words);
+    changeWord();
     wordInput.addEventListener('input', startMatch);
     setInterval(countdown, 1000);
     setInterval(gameOver, 50);
@@ -96,17 +97,34 @@ function startMatch() {
 function matchWords() {
     if (wordInput.value === currentWord.innerHTML) {
         playLevelUp();
+        wordInput.setAttribute("class", "correct")
         return true;
     } else {
         message.innerHTML = '';
+        wordInput.setAttribute("class", "")
         return false;
     }
+}
+
+function fadeOut() {
+    currentWord.style.opacity = 0;
+}
+
+function fadeIn() {
+    currentWord.style.opacity = 1;
+}
+
+function changeWord() {
+    fadeOut();
+    setTimeout(showWord, 500);
+    setTimeout(fadeIn, 500);
 }
 
 // Pick & show random word
 function showWord(words) {
     const randIndex = Math.floor(Math.random() * words.length);
     currentWord.innerHTML = words[randIndex];
+    changeWord();
 }
 
 // Countdown timer
