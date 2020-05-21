@@ -110,7 +110,7 @@ time, mark, audio, video {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 75px;
-    transition: 0.5s;
+    transition: 450ms;
 }
 
 
