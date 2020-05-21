@@ -163,7 +163,18 @@ function gameOver() {
         score = -1;
         // gameOverSound.play();
         // gameOverSound.pause();
-        time = currentLevel;
-        displayModal();
+        // time = currentLevel;
+        // displayModal();
     }
+}
+
+var bgmusic = new Audio();
+bgmusic.src = "sounds/bgmusic.mp3"
+
+function playMusic() {
+    bgmusic.play();
+}
+
+function pauseMusic() {
+    bgmusic.pause();
 }
