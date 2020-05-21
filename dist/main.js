@@ -161,6 +161,9 @@ function gameOver() {
     if (!isPlaying && time === 0) {
         // message.innerHTML = 'Gotta be quicker than that!';
         score = -1;
-        // displayModal();
+        // gameOverSound.play();
+        // gameOverSound.pause();
+        time = currentLevel;
+        displayModal();
     }
 }
