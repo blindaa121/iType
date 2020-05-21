@@ -25,11 +25,13 @@ const timeDisplay = document.getElementById('time');
 const message = document.getElementById('message');
 const seconds = document.getElementById('seconds');
 
-var keystroke = new Audio();
-keystroke.src = "sounds/tick.mp3"
+// var keystroke = new Audio();
+// keystroke.src = "sounds/tick.mp3"
 
 wordInput.addEventListener("keydown", () => {
-    keystroke.play()
+    var keystroke = new Audio("sounds/tick.mp3");
+    keystroke.play();
+    // return false;
 });
 
 // fetch words from API
@@ -141,7 +143,7 @@ window.onclick = function (event) {
 // Check game status
 function gameOver() {
     if (!isPlaying && time === 0) {
-        message.innerHTML = 'Gotta be quicker than that!';
+        // message.innerHTML = 'Gotta be quicker than that!';
         score = -1;
         // displayModal();
     }

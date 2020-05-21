@@ -34,6 +34,10 @@ time, mark, audio, video {
   text-decoration: underline;
 }
 
+#time {
+  font-size: 120px;
+}
+
 .score {
   display: flex;
   flex-direction: column;
@@ -46,6 +50,10 @@ time, mark, audio, video {
 
 .score > h3 {
   text-decoration: underline;
+}
+
+#score {
+  font-size: 120px;
 }
 
 .header {
