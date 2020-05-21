@@ -29,9 +29,14 @@ const seconds = document.getElementById('seconds');
 // keystroke.src = "sounds/tick.mp3"
 
 wordInput.addEventListener("keydown", () => {
-    var keystroke = new Audio("sounds/keystroke1.mp3");
-    keystroke.play();
-    return false;
+    for (let i = 0; i < currentWord.innerHTML.length; i++)
+        if (wordInput.value[i] === currentWord.innerHTML[i]) {
+            var keystroke = new Audio("sounds/keystroke1.mp3");
+            keystroke.play();
+            return false;
+        } else {
+            
+        }
 });
 
 // fetch words from API
