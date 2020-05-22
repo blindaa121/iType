@@ -29,17 +29,6 @@ const seconds = document.getElementById('seconds');
 // keystroke.src = "sounds/tick.mp3"
 
 wordInput.addEventListener("keydown", () => {
-    // debugger
-    // for (let i = 0; i < currentWord.innerHTML.length; i++) {
-    //     if (wordInput.value[i] === currentWord.innerHTML[i]) {
-    //         var keystroke = new Audio("sounds/keystroke1.mp3");
-    //         keystroke.play();
-    //         return false;
-    //     } else {
-    //         var buzzer = new Audio("sounds/buzzer.m4a");
-    //         buzzer.play();
-    //         return false;
-    //     }}
     var keystroke = new Audio("sounds/keystroke1.mp3");
     keystroke.play();
     return false;
@@ -69,24 +58,24 @@ function changeLevel(level) {
     currentLevel = level;
 }
 // Game sounds 
-var click = new Audio();
-click.src = "sounds/buttonpress.mp3";
 
 function playBtnSound() {
+    var click = new Audio();
+    click.src = "sounds/buttonpress.mp3";
     click.play();
 };
 
-var levelUp = new Audio();
-levelUp.src = "sounds/levelup.mp3"
 
 function playLevelUp() {
+    var levelUp = new Audio();
+    levelUp.src = "sounds/levelup.mp3"
     levelUp.play();
 };
 
-var gameOverSound = new Audio();
-gameOverSound.src = "sounds/lose.mp3"
 
 function playgameOver() {
+    var gameOverSound = new Audio();
+    gameOverSound.src = "sounds/lose.mp3"
     gameOverSound.play();
 };
 
@@ -138,11 +127,7 @@ function showWord(words) {
 
 // Countdown timer
 function countdown() {
-    if (time > 0) {
-        time--;
-    } else if (time === 0) {
-        isPlaying = false;
-    }
+    (time > 0) ? time-- : isPlaying = false;
     timeDisplay.innerHTML = time;
 }
 
@@ -169,14 +154,7 @@ window.onclick = function (event) {
 
 // Check game status
 function gameOver() {
-    if (!isPlaying && time === 0) {
-        // message.innerHTML = 'Gotta be quicker than that!';
-        score = -1;
-        // gameOverSound.play();
-        // gameOverSound.pause();
-        // time = currentLevel;
-        // displayModal();
-    }
+    if (!isPlaying && time === 0) score = -1;
 }
 
 var bgmusic = new Audio();

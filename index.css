@@ -226,6 +226,10 @@ h2 {
 	top:1px;
 }
 
+.level-btn:focus {
+  outline: none;
+}
+
 
 /* The Modal (background) */
 .modal {
