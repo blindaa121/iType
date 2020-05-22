@@ -27,7 +27,7 @@ time, mark, audio, video {
   font-size: 50px;
   font-family: 'Bebas Neue', cursive;
   color: white;
-  padding-right: 120px;
+  padding-right: 60px;
 }
 
 .time > h3 {
@@ -59,7 +59,7 @@ time, mark, audio, video {
 .header {
     font-family: 'Lobster', cursive;
     text-align: center;
-    font-size: 60px;
+    font-size: 57px;
     color: white;
     text-shadow: white;
     background-color: #2F4858;
@@ -80,7 +80,7 @@ time, mark, audio, video {
     align-items: center;
     /* border: 3px solid #087E8B; */
     background-color: #ef8354;
-    height: 650px;
+    height: 620px;
 }
 
 .row {
@@ -133,14 +133,14 @@ time, mark, audio, video {
 
 .select-difficulty {
     display: flex;
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
     justify-content: space-between;
     width: 750px;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .difficulty-section {
