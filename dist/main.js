@@ -29,14 +29,20 @@ const seconds = document.getElementById('seconds');
 // keystroke.src = "sounds/tick.mp3"
 
 wordInput.addEventListener("keydown", () => {
-    for (let i = 0; i < currentWord.innerHTML.length; i++)
-        if (wordInput.value[i] === currentWord.innerHTML[i]) {
-            var keystroke = new Audio("sounds/keystroke1.mp3");
-            keystroke.play();
-            return false;
-        } else {
-            
-        }
+    // debugger
+    // for (let i = 0; i < currentWord.innerHTML.length; i++) {
+    //     if (wordInput.value[i] === currentWord.innerHTML[i]) {
+    //         var keystroke = new Audio("sounds/keystroke1.mp3");
+    //         keystroke.play();
+    //         return false;
+    //     } else {
+    //         var buzzer = new Audio("sounds/buzzer.m4a");
+    //         buzzer.play();
+    //         return false;
+    //     }}
+    var keystroke = new Audio("sounds/keystroke1.mp3");
+    keystroke.play();
+    return false;
 });
 
 // fetch words from API
@@ -178,6 +184,7 @@ bgmusic.src = "sounds/bgmusic.mp3"
 
 function playMusic() {
     bgmusic.play();
+    bgmusic.loop = true;
 }
 
 function pauseMusic() {

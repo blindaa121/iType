@@ -267,6 +267,34 @@ h2 {
 
 .bg-music > h1 {
   text-align: center;
+  text-decoration: underline;
   font-family: 'Bebas Neue', cursive;
-  font-size: 30px;
+  font-size: 35px;
+}
+
+.bg-music-btns {
+  display: flex;
+}
+
+.music-btn {
+  border: none;
+  /* border-right: 2px solid white; */
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  background-color: #ef8354;
+  transition: 350ms;
+}
+
+.music-btn-on {
+  border-right: 1px solid black;
+  padding-right: 10px;
+}
+
+.music-btn:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.music-btn:focus {
+  outline: none;
 }
