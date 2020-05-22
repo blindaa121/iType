@@ -105,7 +105,7 @@ function startMatch() {
 
 // Match currentWord to wordInput
 function matchWords() {
-    if (wordInput.value === currentWord.innerHTML) {
+    if (wordInput.value.toLowerCase() === currentWord.innerHTML) {
         playLevelUp();
         return true;
     } else {
