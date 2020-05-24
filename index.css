@@ -70,7 +70,9 @@ time, mark, audio, video {
 .game-display {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    height: 615px;
 }
 
 .container {
@@ -104,6 +106,12 @@ time, mark, audio, video {
   background-color: #2F4858;
   color: white;
   height: 75px;
+}
+
+#message {
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  font-size: 30px;
 }
 
 #current-word {

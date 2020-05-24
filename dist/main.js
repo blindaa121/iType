@@ -1,42 +1,21 @@
 window.addEventListener('load', init);
 
-// Globals
-
-// Available Levels
-const levels = {
-    easy: 5,
-    medium: 3,
-    hard: 1
-};
-
-// To change level
-
-
-let currentLevel = levels.easy;
-let time = currentLevel;
-let score = 0;
-let isPlaying;
-
-// DOM Elements
 const wordInput = document.getElementById('word-input');
 const currentWord = document.getElementById('current-word');
 const scoreDisplay = document.getElementById('score');
 const timeDisplay = document.getElementById('time');
 const message = document.getElementById('message');
 const seconds = document.getElementById('seconds');
+const levels = {
+    easy: 5,
+    medium: 3,
+    hard: 1
+};
 
-// var keystroke = new Audio();
-// keystroke.src = "sounds/tick.mp3"
-
-wordInput.addEventListener("keydown", () => {
-    var keystroke = new Audio("sounds/keystroke1.mp3");
-    keystroke.play();
-    return false;
-});
-
-// fetch words from API
-// let words = [];
-// let words = [];
+let currentLevel = levels.easy;
+let time = currentLevel;
+let score = 0;
+let isPlaying;
 
 fetch('https://random-word-api.herokuapp.com/word?number=100')
 .then(response => response.json())
@@ -45,6 +24,7 @@ fetch('https://random-word-api.herokuapp.com/word?number=100')
 // Initialize Game
 function init() {
     seconds.innerHTML = currentLevel;
+    timeDisplay.innerHTML = currentLevel;
     words = fetch('https://random-word-api.herokuapp.com/word?number=100')
     .then(response => response.json())
     .then(data => words = data) 
@@ -79,6 +59,11 @@ function playgameOver() {
     gameOverSound.play();
 };
 
+wordInput.addEventListener("keydown", () => {
+    var keystroke = new Audio("sounds/keystroke1.mp3");
+    keystroke.play();
+    return false;
+});
 // Start match
 function startMatch() {
     if (matchWords()) {
@@ -96,9 +81,9 @@ function startMatch() {
 function matchWords() {
     if (wordInput.value.toLowerCase() === currentWord.innerHTML) {
         playLevelUp();
+        message.innerHTML = '';
         return true;
     } else {
-        message.innerHTML = '';
         return false;
     }
 }
@@ -131,30 +116,15 @@ function countdown() {
     timeDisplay.innerHTML = time;
 }
 
-function showDialog () {
-    document.getElementById("myDialog").showModal();
-}
-
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-
-function displayModal() {
-    modal.style.display = "block";
-}
-
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
 // Check game status
 function gameOver() {
-    if (!isPlaying && time === 0) score = -1;
+    // debugger
+    if (time === 0) {
+        score = -1;
+        message.innerHTML = 'Game Over! Type the word above to play again!'
+    } else {
+        wordInput.setAttribute('placeholder', 'Begin typing!');
+    }
 }
 
 var bgmusic = new Audio();
