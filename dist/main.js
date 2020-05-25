@@ -74,7 +74,7 @@ function startMatch() {
         // clearInterval(counter);
         // counter = setInterval(countdown, 1000)
         isPlaying = true;
-        time = currentLevel;
+        time = currentLevel + 1;
         changeWord(words);
         wordInput.value = '';
         score++;
