@@ -26,19 +26,20 @@ fetch('https://random-word-api.herokuapp.com/word?number=100')
 // Initialize Game
 function init() {
     seconds.innerHTML = currentLevel;
-    timeDisplay.innerHTML = currentLevel;
+    timeDisplay.innerHTML = time;
+
     words = fetch('https://random-word-api.herokuapp.com/word?number=100')
     .then(response => response.json())
     .then(data => words = data) 
 
     showWord(words);
     wordInput.addEventListener('input', startMatch);
-    setInterval(countdown, 1000);
     setInterval(gameOver, 50);
 }
 
 function changeLevel(level) {
     currentLevel = level;
+    timeDisplay.innerHTML = currentLevel;
 }
 // Game sounds 
 
@@ -70,8 +71,10 @@ wordInput.addEventListener("keydown", () => {
 // Start match
 function startMatch() {
     if (matchWords()) {
+        // clearInterval(counter);
+        // counter = setInterval(countdown, 1000)
         isPlaying = true;
-        time = currentLevel + 1;
+        time = currentLevel;
         changeWord(words);
         wordInput.value = '';
         score++;
@@ -83,11 +86,18 @@ function startMatch() {
 }
 
 // Match currentWord to wordInput
+timer = function () {
+    setInterval(countdown, 1000)
+}
+
 function matchWords() {
     if (wordInput.value.toLowerCase() === currentWord.innerHTML) {
+        clearInterval(timer);
+        timer = setInterval(countdown, 1000);
         playLevelUp();
         message.innerHTML = '';
         return true;
+        // clearInterval(timer);
     } else {
         return false;
     }
