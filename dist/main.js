@@ -3,6 +3,7 @@ window.addEventListener('load', init);
 const wordInput = document.getElementById('word-input');
 const currentWord = document.getElementById('current-word');
 const scoreDisplay = document.getElementById('score');
+const highscoreDisplay = document.getElementById('high-score');
 const timeDisplay = document.getElementById('time');
 const message = document.getElementById('message');
 const seconds = document.getElementById('seconds');
@@ -15,6 +16,7 @@ const levels = {
 let currentLevel = levels.easy;
 let time = currentLevel;
 let score = 0;
+let highScore = 0;
 let isPlaying;
 
 fetch('https://random-word-api.herokuapp.com/word?number=100')
@@ -28,6 +30,7 @@ function init() {
     words = fetch('https://random-word-api.herokuapp.com/word?number=100')
     .then(response => response.json())
     .then(data => words = data) 
+
     showWord(words);
     wordInput.addEventListener('input', startMatch);
     setInterval(countdown, 1000);
@@ -75,6 +78,8 @@ function startMatch() {
     }
     seconds.innerHTML = currentLevel;
     score === -1 ? scoreDisplay.innerHTML = 0 : scoreDisplay.innerHTML = score;
+    if (score > highScore) highScore = score;
+    highscoreDisplay.innerHTML = highScore;
 }
 
 // Match currentWord to wordInput
