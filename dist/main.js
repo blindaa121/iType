@@ -57,11 +57,13 @@ function playgameOver() {
     gameOverSound.play();
 };
 
-wordInput.addEventListener("keydown", () => {
+function playTick() {
     var keystroke = new Audio("sounds/keystroke1.mp3");
     keystroke.play();
-    return false;
-});
+};
+
+wordInput.addEventListener("keydown", playTick);
+
 // Start match
 function startMatch() {
     if (matchWords()) {
