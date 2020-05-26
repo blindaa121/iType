@@ -63,7 +63,6 @@ function playTick() {
 };
 
 wordInput.addEventListener("keydown", playTick);
-
 // Start match
 function startMatch() {
     if (matchWords()) {

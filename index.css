@@ -35,7 +35,7 @@ time, mark, audio, video {
 }
 
 #time {
-  font-size: 120px;
+  font-size: 100px;
 }
 
 .score, .high-score {
@@ -45,7 +45,7 @@ time, mark, audio, video {
   font-size: 50px;
   font-family: 'Bebas Neue', cursive;
   color: white;
-  padding-left: 120px;
+  padding-left: 80px;
 }
 
 .score > h3, .high-score > h3 {
@@ -53,7 +53,7 @@ time, mark, audio, video {
 }
 
 #score, #high-score {
-  font-size: 120px;
+  font-size: 100px;
 }
 
 .header {
@@ -72,7 +72,7 @@ time, mark, audio, video {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 615px;
+    height: 535px;
 }
 
 .container {
@@ -82,7 +82,7 @@ time, mark, audio, video {
     align-items: center;
     /* border: 3px solid #087E8B; */
     background-color: #ef8354;
-    height: 620px;
+    height: 560px;
 }
 
 .row {
@@ -117,7 +117,7 @@ time, mark, audio, video {
 #current-word {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
-    font-size: 75px;
+    font-size: 60px;
     transition: 450ms;
 }
 
@@ -128,7 +128,7 @@ time, mark, audio, video {
 }
 
 #word-input {
-  font-size: 75px;
+  font-size: 60px;
   font-family: 'Permanent Marker', cursive;
   text-align: center;
   border: none;
