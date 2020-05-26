@@ -310,3 +310,12 @@ h2 {
 .music-btn:focus {
   outline: none;
 }
+
+.linkedin, .github{
+  height: 30px;
+  transition: 200ms;
+}
+
+.linkedin:hover, .github:hover{
+  transform: scale(1.1)
+}
