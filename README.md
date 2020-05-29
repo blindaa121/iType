@@ -6,6 +6,9 @@ Depending on the level, the player will then have a certain amount of time to ty
 # Technologies
 iType will be powered by Javascript, HTML5, and CSS. 
 
+# Demo 
+![iType Demo](demo/giphy.gif)
+
 # MVP List 
 1. User's are able to select the level of difficulty.
 
