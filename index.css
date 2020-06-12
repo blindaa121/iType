@@ -284,6 +284,11 @@ h2 {
   font-size: 35px;
 }
 
+.bg-music {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .bg-music-btns {
   display: flex;
 }
