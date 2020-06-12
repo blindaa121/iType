@@ -285,9 +285,3 @@ h2 {
 .linkedin:hover, .github:hover{
   transform: scale(1.1)
 }
-
-.left-container {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-}
