@@ -63,11 +63,9 @@ function playTick() {
 };
 
 wordInput.addEventListener("keydown", playTick);
-// Start match
+
 function startMatch() {
     if (matchWords()) {
-        // clearInterval(counter);
-        // counter = setInterval(countdown, 1000)
         isPlaying = true;
         time = currentLevel + 1;
         changeWord(words);
@@ -79,7 +77,7 @@ function startMatch() {
     highscoreDisplay.innerHTML = highScore;
 }
 
-// Match currentWord to wordInput
+
 timer = function () {
     setInterval(countdown, 1000)
 }
@@ -91,7 +89,6 @@ function matchWords() {
         playLevelUp();
         message.innerHTML = '';
         return true;
-        // clearInterval(timer);
     } else {
         return false;
     }
@@ -127,7 +124,6 @@ function countdown() {
 
 // Check game status
 function gameOver() {
-    // debugger
     if (time === 0) {
         score = -1;
         message.innerHTML = 'Game Over! Type the word above to play again!'
