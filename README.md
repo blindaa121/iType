@@ -4,7 +4,10 @@ iType is a speed typing game that allows players to practice their typing skills
 Depending on the level, the player will then have a certain amount of time to type as many words as possible, where the final score is determined by the correctly spelled words.
 
 # Technologies
-iType will be powered by Javascript, HTML5, and CSS. 
+- ## JavaScript
+- ## HTML / CSS
+- ## Word API
+
 
 # Demo 
 ![iType Demo](demo/giphy.gif)
@@ -37,6 +40,14 @@ After the user selects their level of choice, they may click on 'Begin typing!' 
 
 ```
 #main.js 
+
+const wordInput = document.getElementById('word-input');
+const currentWord = document.getElementById('current-word';
+const scoreDisplay = document.getElementById('score');
+const highscoreDisplay = document.getElementById('high-score');
+const timeDisplay = document.getElementById('time');
+const message = document.getElementById('message');
+
 function startMatch() {
     if (matchWords()) {
         isPlaying = true;
@@ -62,6 +73,28 @@ function matchWords() {
     }
 }
 ```
+The game's word matching logic is centered around the player's keystrokes and word input. If the current wordInput matches the currentWord being displayed, the matchWords function resets the countdown timer, invokes the audio playLevelUp object, and returns a true boolean value. 
+
+# Random Word API Implementation
+
+During the the developmennt of this game, I needed to figure out a way to create a dynamic display of words instead of hard coding several words into the code. After researching different word API's and how to implement them, I came across a useful API which best suited the requirements for the game. Through this approach, I was able to fetch random words by using an AJAX call to the API. From there, I retrieved the list of words, implemented a random word selector function, and updated the currentWord element with the selected word.
+
+```
+function init() {
+    timeDisplay.innerHTML = time;
+
+    words = fetch('https://random-word-api.herokuapp.com/word?number=100')
+        .then(response => response.json())
+        .then(data => words = data) 
+        .then(data => data.forEach(word => currentWord.innerHTML = word))
+
+    showWord(words);
+    wordInput.addEventListener('input', startMatch);
+    setInterval(gameOver, 50);
+}
+```
+
+
 
 
 

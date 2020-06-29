@@ -14,18 +14,18 @@ let score = 0;
 let highScore = 0;
 let isPlaying;
 
-fetch('https://random-word-api.herokuapp.com/word?number=100')
-    .then(response => response.json())
-    .then(data => data.forEach(word => currentWord.innerHTML = word))
+function fetchWords() {
+    words = fetch('https://random-word-api.herokuapp.com/word?number=100')
+        .then(response => response.json())
+        .then(data => words = data)
+        .then(data => data.forEach(word => currentWord.innerHTML = word));
+}
+
 
 // Initialize Game
 function init() {
     timeDisplay.innerHTML = time;
-
-    words = fetch('https://random-word-api.herokuapp.com/word?number=100')
-        .then(response => response.json())
-        .then(data => words = data) 
-
+    fetchWords();
     showWord(words);
     wordInput.addEventListener('input', startMatch);
     setInterval(gameOver, 50);
