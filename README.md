@@ -4,9 +4,9 @@ iType is a speed typing game that allows players to practice their typing skills
 Depending on the level, the player will then have a certain amount of time to type as many words as possible, where the final score is determined by the correctly spelled words.
 
 # Technologies
-- ## JavaScript
-- ## HTML / CSS
-- ## Word API
+- JavaScript
+- HTML / CSS
+- Word API
 
 
 # Demo 
@@ -34,7 +34,7 @@ function changeLevel(level) {
     timeDisplay.innerHTML = currentLevel;
 }
 ```
-Once the user clicks on a level button, the changeLevel function is invoked. By utilizing DOM manipulation, the timeDisplay's innerHTML element is set to the chosen level, which then gets updated in the game. 
+Once the player clicks on a level button, the changeLevel function is invoked. By utilizing DOM manipulation, the timeDisplay's innerHTML element is set to the chosen level, which then gets updated in the game. 
 
 After the user selects their level of choice, they may click on 'Begin typing!' then proceed to type the given word. Since the first word can be completed at any time, it does not count towards their score. Once the first word is typed, the game has now begun and the timer starts to count down. 
 
@@ -77,7 +77,7 @@ The game's word matching logic is centered around the player's keystrokes and wo
 
 # Random Word API Implementation
 
-During the the developmennt of this game, I needed to figure out a way to create a dynamic display of words instead of hard coding several words into the code. After researching different word API's and how to implement them, I came across a useful API which best suited the requirements for the game. Through this approach, I was able to fetch random words by using an AJAX call to the API. From there, I retrieved the list of words, implemented a random word selector function, and updated the currentWord element with the selected word.
+During game development, I needed to figure out a way to create a dynamic display of words instead of hard coding several words into the code. After researching different word API's and how to implement them, I came across a useful API which best suited the requirements for the game. Through this approach, I was able to fetch random words by using an AJAX call to the API. From there, I retrieved the list of words, implemented a random word selector function, and updated the currentWord element with the selected word.
 
 ```
 function init() {
