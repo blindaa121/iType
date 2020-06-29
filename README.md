@@ -35,6 +35,35 @@ Once the user clicks on a level button, the changeLevel function is invoked. By 
 
 After the user selects their level of choice, they may click on 'Begin typing!' then proceed to type the given word. Since the first word can be completed at any time, it does not count towards their score. Once the first word is typed, the game has now begun and the timer starts to count down. 
 
+```
+#main.js 
+function startMatch() {
+    if (matchWords()) {
+        isPlaying = true;
+        time = currentLevel + 1;
+        changeWord(words);
+        wordInput.value = '';
+        score++;
+    }
+    score === -1 ? scoreDisplay.innerHTML = 0 : scoreDisplay.innerHTML = score;
+    if (score > highScore) highScore = score;
+    highscoreDisplay.innerHTML = highScore;
+}
+
+function matchWords() {
+    if (wordInput.value.toLowerCase() === currentWord.innerHTML) {
+        clearInterval(timer);
+        timer = setInterval(countdown, 1000);
+        playLevelUp();
+        message.innerHTML = '';
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+
 
 # MVP List 
 1. User's are able to select the level of difficulty.
