@@ -9,6 +9,33 @@ iType will be powered by Javascript, HTML5, and CSS.
 # Demo 
 ![iType Demo](demo/giphy.gif)
 
+# Gameplay
+To begin the game, the player may choose a level of difficulty under 'Choose your level'. The range of difficulty spans from Warmup (Easy), Warmed-Up (Medium), and Wordsmith (Hard). Depending on the chosen level, the countdown will vary from 5 to 1 second(s), and update respectively. 
+
+``` 
+#index.html
+
+<div class='difficulty-section'>
+    <h1>Choose your level</h1>
+    <div class='select-difficulty'>
+        <button class='level-btn' onclick="playBtnSound(); changeLevel(5);" class="level-btn">Warmup</button>
+        <button class='level-btn' onclick="playBtnSound(); changeLevel(3);" class='level-btn'>Warmed-Up</button>
+        <button class='level-btn' onclick="playBtnSound(); changeLevel(1);" class='level-btn'>Wordsmith</button>    
+    </div>
+</div>
+
+#main.js 
+
+function changeLevel(level) {
+    currentLevel = level;
+    timeDisplay.innerHTML = currentLevel;
+}
+```
+Once the user clicks on a level button, the changeLevel function is invoked. By utilizing DOM manipulation, the timeDisplay's innerHTML element is set to the chosen level, which then gets updated in the game. 
+
+After the user selects their level of choice, they may click on 'Begin typing!' then proceed to type the given word. Since the first word can be completed at any time, it does not count towards their score. Once the first word is typed, the game has now begun and the timer starts to count down. 
+
+
 # MVP List 
 1. User's are able to select the level of difficulty.
 

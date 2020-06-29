@@ -15,16 +15,16 @@ let highScore = 0;
 let isPlaying;
 
 fetch('https://random-word-api.herokuapp.com/word?number=100')
-.then(response => response.json())
-.then(data => data.forEach(word => currentWord.innerHTML = word))
+    .then(response => response.json())
+    .then(data => data.forEach(word => currentWord.innerHTML = word))
 
 // Initialize Game
 function init() {
     timeDisplay.innerHTML = time;
 
     words = fetch('https://random-word-api.herokuapp.com/word?number=100')
-    .then(response => response.json())
-    .then(data => words = data) 
+        .then(response => response.json())
+        .then(data => words = data) 
 
     showWord(words);
     wordInput.addEventListener('input', startMatch);
