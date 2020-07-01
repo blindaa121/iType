@@ -77,7 +77,7 @@ The game's word matching logic is centered around the player's keystrokes and wo
 
 # Random Word API Implementation
 
-During game development, I needed to figure out a way to create a dynamic display of words instead of hard coding several words into the code. After researching different word API's and how to implement them, I came across a useful API which best suited the requirements for the game. Through this approach, I was able to fetch random words by using an AJAX call to the API. From there, I retrieved the list of words, implemented a random word selector function, and updated the currentWord element with the selected word.
+During game development, I needed to figure out a way to create a dynamic display of words instead of hard coding several words into the code. After researching different word API's and how to implement them, I came across a useful API which best suited the requirements for the game. Through this approach, I was able to fetch random words by using a Fetch API. From there, I retrieved the list of words, implemented a random word selector function, and updated the currentWord element with the selected word.
 
 ```
 function init() {
