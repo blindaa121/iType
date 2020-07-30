@@ -19,15 +19,21 @@
     </header>
 
     
+    <div class='outermost-container'>
 
-       
-        <!-- <div class="time-score-container"> -->
         <div class='left-container'>
                 <h3>Countdown</h3>
                 <span id="time"></span> 
+                <div class='bg-music'>
+                    <h1>MUSIC</h1>
+                    <div class='bg-music-btns'>
+                        <button class='music-btn music-btn-on' onclick="playMusic()">ON</button>
+                        <button class='music-btn' onclick="pauseMusic()">OFF</button>
+                    </div>
+                </div>
         </div>
         <!-- </div> -->
-
+    
             <div class="game-display">
                 
                 <h2 id="current-word"></h2>
@@ -44,37 +50,34 @@
                         <button class='btn btn-hard' id='btn3' onclick="playBtnSound(); changeLevel(1);" ><span>HARD</span></button>
                     </div>
                 </div>
-
-                
-                <div class='bg-music'>
-                    <h1>MUSIC</h1>
-                    <div class='bg-music-btns'>
-                        <button class='music-btn music-btn-on' onclick="playMusic()">ON</button>
-                        <button class='music-btn' onclick="pauseMusic()">OFF</button>
-                    </div>
-                </div>
+    
                 
                 
-                <div class="links">
+                
+                
+                <!-- <div class="links">
                     <a href="https://www.linkedin.com/in/bryan-linda-44389794/"><img class="linkedin" src="images/linkedin.png" alt="LinkedIn"></a>
                     <a href="https://github.com/blindaa121/iType"><img class="github" src='images/github.png' alt="Github Repo"></a>
-                </div>
+                </div> -->
             </div>
-
+    
         <div class="score-container">
             <div class="score">
                 <h3>Score</h3>  
                 <span id="score">0</span>
             </div>
-
+    
             <div class="high-score">
                 <h3>High Score</h3>
                 <span id="high-score">0</span>
             </div>
         </div>
             
-
+    
     </div>
+    </div>
+       
+        <!-- <div class="time-score-container"> -->
     <footer>
         <div class="instructions-outer">
             <h5>Instructions</h5>
