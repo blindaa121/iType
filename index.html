@@ -2,12 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iType</title>
     <link rel="stylesheet" href="./index.css">
     <link rel="icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/keyboard_2328.png">
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    
-    <title>iType</title>
+    <script src="https://kit.fontawesome.com/41494d0a90.js" crossorigin="anonymous"></script>
 </head>
+    
 <body>
     <div class="container1">
     <header class="header">
@@ -18,19 +19,29 @@
         <!-- <div class="scanlines"></div> -->
     </header>
 
+    <div id="modal">
+        <p class="message">Dust yourself off and try again?</p>
+        <div class="options">
+            <button class="modal-btn" onclick="closeModal()">YES</button>
+            <button class="modal-btn" onclick="closeModal()">NO</button>
+        </div>
+    </div>
     
     <div class='outermost-container'>
 
         <div class='left-container'>
+            <div class='countdown'>
                 <h3>Countdown</h3>
                 <span id="time"></span> 
-                <div class='bg-music'>
-                    <h1>MUSIC</h1>
-                    <div class='bg-music-btns'>
-                        <button class='music-btn music-btn-on' onclick="playMusic()">ON</button>
-                        <button class='music-btn' onclick="pauseMusic()">OFF</button>
-                    </div>
+            </div>
+                
+            <div class='bg-music'>
+                <h1>MUSIC</h1>
+                <div class='bg-music-btns'>
+                    <button class='music-btn music-btn-on' onclick="playMusic()"><i class="fas fa-volume-down"></i></button>
+                    <button class='music-btn music-btn-off' onclick="pauseMusic()"><i class="fas fa-volume-mute"></i></button>
                 </div>
+            </div>
         </div>
         <!-- </div> -->
     
@@ -43,22 +54,24 @@
                 
     
                 <div class='difficulty-section'>
-                    <h1 id='difficulty-header'>CHOOSE YOUR LEVEL</h1>
+                    <div class='difficulty-border'>
+                        <h1 id='difficulty-header'>CHOOSE YOUR LEVEL</h1>
+                    </div>
+                    
                     <div class='select-difficulty'>
                         <button class='btn btn-easy' id='btn1' onclick="playBtnSound(); changeLevel(5);" ><span>EASY</span></button>
                         <button class='btn btn-med' id='btn2' onclick="playBtnSound(); changeLevel(3);" ><span>MEDIUM</span></button>
-                        <button class='btn btn-hard' id='btn3' onclick="playBtnSound(); changeLevel(1);" ><span>HARD</span></button>
+                        <button class='btn btn-hard' id='btn3' onclick="playBtnSound(); changeLevel(2);" ><span>HARD</span></button>
                     </div>
                 </div>
-    
                 
                 
-                
-                
-                <!-- <div class="links">
-                    <a href="https://www.linkedin.com/in/bryan-linda-44389794/"><img class="linkedin" src="images/linkedin.png" alt="LinkedIn"></a>
-                    <a href="https://github.com/blindaa121/iType"><img class="github" src='images/github.png' alt="Github Repo"></a>
-                </div> -->
+                <div class="links">
+                    <a href="https://bryanlinda.com"><i class="fas fa-briefcase fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/in/bryan-linda/"><i class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://github.com/blindaa121"><i class="fab fa-github-alt fa-3x"></i></i></a>
+                    <a href="https://angel.co/u/bryan-linda"><i class="fab fa-angellist fa-3x"></i></a>
+                </div>
             </div>
     
         <div class="score-container">
@@ -72,21 +85,9 @@
                 <span id="high-score">0</span>
             </div>
         </div>
-            
-    
+        
+        
     </div>
-    </div>
-       
-        <!-- <div class="time-score-container"> -->
-    <footer>
-        <div class="instructions-outer">
-            <h5>Instructions</h5>
-            <span>
-                To start gameplay, click 'begin typing!' then type the given word. Continue to type as many words as you can
-                before timer strikes zero!
-            </span>
-        </div>
-    </footer>
     <script src="dist/main.js"></script>
 </body>
 </html>

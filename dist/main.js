@@ -6,11 +6,18 @@ const scoreDisplay = document.getElementById('score');
 const highscoreDisplay = document.getElementById('high-score');
 const timeDisplay = document.getElementById('time');
 const message = document.getElementById('message');
-const button = document.getElementById('btn1');
+const button1 = document.getElementById('btn1');
+const button2 = document.getElementById('btn2');
+const button3 = document.getElementById('btn3');
+const modal = document.getElementById('modal')
+const body = document.getElementsByTagName('body')[0];
+const leftContainer = document.getElementsByClassName('left-container')[0];
+const rightContainer = document.getElementsByClassName('score-container')[0];
+const levelContainer = document.getElementsByClassName('difficulty-section')[0];
 
-button.addEventListener('click', function() {
-    button.style.color = '#91C4F2'
-});
+console.log(leftContainer)
+console.log(rightContainer)
+console.log(levelContainer)
 
 let currentLevel = 5;
 let time = currentLevel;
@@ -110,15 +117,26 @@ function showWord(words) {
 
 // Countdown timer
 function countdown() {
-    (time > 0) ? time-- : isPlaying = false;
+    if (!isPlaying) {
+        return;
+    } else if (time > 0){
+        time-- 
+    } else {
+        isPlaying = false;
+    }
     timeDisplay.innerHTML = time;
 }
 
 // Check game status
 function gameOver() {
     if (time === 0) {
+        time = 5;
         score = -1;
-        message.innerHTML = 'Game Over! Type the word above to play again!'
+        isPlaying = false;
+        modal.style.display = 'inline-flex';
+        leftContainer.style.opacity = '25%'
+        rightContainer.style.opacity = '25%'
+        levelContainer.style.opacity = '25%'
     } else {
         wordInput.setAttribute('placeholder', 'TYPE THE WORD ABOVE');
     }
@@ -134,4 +152,37 @@ function playMusic() {
 
 function pauseMusic() {
     bgmusic.pause();
+}
+
+button1.addEventListener('click', function() {
+    button1.style.color = '#91C4F2';
+    button2.style.color = 'white';
+    button3.style.color = 'white'
+    timeDisplay.style.color = '#91C4F2';
+    time = 5
+});
+
+button2.addEventListener('click', function() {
+    button2.style.color = '#AABD8C';
+    button1.style.color = 'white';
+    button3.style.color = 'white';
+    timeDisplay.style.color = '#AABD8C';
+    time = 4
+});
+
+button3.addEventListener('click', function() {
+    button3.style.color = '#ED474A';
+    button1.style.color = 'white';
+    button2.style.color = 'white';
+    timeDisplay.style.color = '#ED474A';
+    time = 2;
+});
+
+// Modal 
+
+function closeModal() {
+    modal.style.display = 'none';
+    leftContainer.style.opacity = '100%'
+    rightContainer.style.opacity = '100%'
+    levelContainer.style.opacity = '100%'
 }
