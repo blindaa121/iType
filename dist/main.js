@@ -15,10 +15,6 @@ const leftContainer = document.getElementsByClassName('left-container')[0];
 const rightContainer = document.getElementsByClassName('score-container')[0];
 const levelContainer = document.getElementsByClassName('difficulty-section')[0];
 
-console.log(leftContainer)
-console.log(rightContainer)
-console.log(levelContainer)
-
 let currentLevel = 5;
 let time = currentLevel;
 let score = 0;
@@ -83,7 +79,13 @@ function startMatch() {
         wordInput.value = '';
         score++;
     }
-    score === -1 ? scoreDisplay.innerHTML = 0 : scoreDisplay.innerHTML = score;
+
+    if (score === -1) {
+        scoreDisplay.innerHTML = 0;
+    } else {
+        scoreDisplay.innerHTML = score;
+    }
+    
     if (score > highScore) highScore = score;
     highscoreDisplay.innerHTML = highScore;
 }
