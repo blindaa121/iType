@@ -6,7 +6,11 @@ const scoreDisplay = document.getElementById('score');
 const highscoreDisplay = document.getElementById('high-score');
 const timeDisplay = document.getElementById('time');
 const message = document.getElementById('message');
+const button = document.getElementById('btn1');
 
+button.addEventListener('click', function() {
+    button.style.color = '#91C4F2'
+});
 
 let currentLevel = 5;
 let time = currentLevel;
@@ -94,19 +98,7 @@ function matchWords() {
     }
 }
 
-function fadeOut() {
-    currentWord.style.opacity = 0;
-    currentWord.style.color = "#48BF84"
-}
-
-function fadeIn() {
-    currentWord.style.opacity = 1;
-    currentWord.style.color = "black"
-}
-
 function changeWord(words) {
-    fadeOut();
-    setTimeout(fadeIn, 500);
     setTimeout(showWord(words), 500);
 }
 
@@ -128,7 +120,7 @@ function gameOver() {
         score = -1;
         message.innerHTML = 'Game Over! Type the word above to play again!'
     } else {
-        wordInput.setAttribute('placeholder', 'Begin typing!');
+        wordInput.setAttribute('placeholder', 'TYPE THE WORD ABOVE');
     }
 }
 

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
     <link rel="icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/keyboard_2328.png">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     
     <title>iType</title>
 </head>
 <body>
+    <div class="container1">
     <header class="header">
-        <h1>iType</h1>
+        <div class="container">
+            <div class="glitch" data-text="ITYPE">ITYPE</div>
+            <p class="subtitle">crafted by bryan linda</p>
+        </div>
+        <!-- <div class="scanlines"></div> -->
     </header>
-    <div class="container">
+
+    
 
        
         <!-- <div class="time-score-container"> -->
@@ -24,22 +28,20 @@
         </div>
         <!-- </div> -->
 
-        <div class="row">
-
             <div class="game-display">
                 
                 <h2 id="current-word"></h2>
-                <input type="text" placeholder='Begin typing!' id="word-input"/>
+                <input type="text" placeholder='' id="word-input"/>
                 <h4 id="message"></h4>
-    
+                
                 
     
                 <div class='difficulty-section'>
-                    <h1>Choose your level</h1>
+                    <h1 id='difficulty-header'>CHOOSE YOUR LEVEL</h1>
                     <div class='select-difficulty'>
-                        <button class='level-btn' onclick="playBtnSound(); changeLevel(5);" class="level-btn">Warmup</button>
-                        <button class='level-btn' onclick="playBtnSound(); changeLevel(3);" class='level-btn'>Warmed-Up</button>
-                        <button class='level-btn' onclick="playBtnSound(); changeLevel(1);" class='level-btn'>Wordsmith</button>    
+                        <button class='btn btn-one' id='btn1' onclick="playBtnSound(); changeLevel(5);" ><span>EASY</span></button>
+                        <button class='btn btn-one' id='btn2' onclick="playBtnSound(); changeLevel(3);" ><span>MEDIUM</span></button>
+                        <button class='btn btn-one' id='btn3' onclick="playBtnSound(); changeLevel(1);" ><span>HARD</span></button>
                     </div>
                 </div>
 
@@ -52,12 +54,12 @@
                     </div>
                 </div>
                 
+                
                 <div class="links">
                     <a href="https://www.linkedin.com/in/bryan-linda-44389794/"><img class="linkedin" src="images/linkedin.png" alt="LinkedIn"></a>
                     <a href="https://github.com/blindaa121/iType"><img class="github" src='images/github.png' alt="Github Repo"></a>
                 </div>
             </div>
-        </div>
 
         <div class="score-container">
             <div class="score">
