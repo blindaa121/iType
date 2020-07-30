@@ -166,6 +166,7 @@ body {
 
 #difficulty-header {
   font-size: 35px;
+  font-style: bold;
 }
 
 .select-difficulty {
@@ -190,8 +191,12 @@ body {
     border-style: none;
     background-color: black;
     font-family: "Oswald", sans-serif;
-    font-style: italic;
+    /* font-style: italic; */
     font-size: 25px;
+}
+
+.btn-easy {
+  border-top-left-radius: 10px;
 }
 
 .btn:focus{
@@ -203,16 +208,43 @@ body {
   color: red;
 }
 
-.btn-one {
+.btn {
     color: #FFF;
     transition: all 0.3s;
     position: relative;
 }
-.btn-one span {
+.btn span {
     transition: all 0.3s;
 }
-/*  */
-.btn-one::before {
+/* btn-easy */
+.btn-easy::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #91C4F2;
+    border-bottom-color: #91C4F2;
+    transform: scale(0.1, 1);
+}
+
+.btn-easy::after {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* btn-med */
+.btn-med::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -226,18 +258,47 @@ body {
     border-bottom-width: 1px;
     border-top-style: solid;
     border-bottom-style: solid;
-    border-top-color: #91C4F2;
-    border-bottom-color: #91C4F2;
+    border-top-color: #AABD8C;
+    border-bottom-color: #AABD8C;
     transform: scale(0.1, 1);
 }
-.btn-one:hover span {
+
+/* btn-hard */
+
+.btn-hard::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #ED474A;
+    border-bottom-color: #ED474A;
+    transform: scale(0.1, 1);
+}
+
+.btn-hard::after {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn:hover span {
     letter-spacing: 3px;
 }
-.btn-one:hover::before {
+.btn:hover::before {
     opacity: 1; 
     transform: scale(1, 1); 
 }
-.btn-one::after {
+.btn::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -248,7 +309,7 @@ body {
     transition: all 0.3s;
     background-color: rgba(255,255,255,0.1);
 }
-.btn-one:hover::after {
+.btn:hover::after {
     opacity: 0; 
     transform: scale(0.1, 1);
 }
@@ -268,7 +329,7 @@ body {
   border: 0;
   box-shadow: inset 0 0 0 3px white,
 			0 0 0 4px white,
-			3px -3px 30px #1beabd, 
+			3px -3px 30px lightgreen, 
       -3px 3px 30px #10abff;
   margin-top: 15px;
 }
