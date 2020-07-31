@@ -22,7 +22,7 @@ let highScore = 0;
 let isPlaying;
 
 function fetchWords() {
-    words = fetch('https://random-word-api.herokuapp.com/word?number=100')
+    words = fetch('https://random-word-api.herokuapp.com/word?swear=0&number=100')
         .then(response => response.json())
         .then(data => words = data)
         .then(data => data.forEach(word => currentWord.innerHTML = word));
@@ -85,7 +85,7 @@ function startMatch() {
     } else {
         scoreDisplay.innerHTML = score;
     }
-    
+
     if (score > highScore) highScore = score;
     highscoreDisplay.innerHTML = highScore;
 }
