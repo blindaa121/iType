@@ -13,7 +13,7 @@ Depending on the level, the player will then have a certain amount of time to ty
 ![iType Demo](demo/giphy.gif)
 
 # Gameplay
-To begin the game, the player may choose a level of difficulty under 'Choose your level'. The range of difficulty spans from Warmup (Easy), Warmed-Up (Medium), and Wordsmith (Hard). Depending on the chosen level, the countdown will vary from 5 to 1 second(s), and update respectively. 
+To begin the game, the player may choose a level of difficulty under 'Choose your level'. The range of difficulty spans from Easy, Medium, to Hard. Depending on the chosen level, the countdown will vary from 5 to 2 second(s), and update respectively. 
 
 ``` 
 #index.html
